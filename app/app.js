@@ -17,6 +17,14 @@ import App from 'containers/App';
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
 
+// webfontloader provider
+import WebfontLoader from '@dr-kobros/react-webfont-loader';
+
+// mui theme provider
+import { ThemeProvider } from '@material-ui/core/styles';
+
+import theme from './theme';
+
 // Load the favicon and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
 import '!file-loader?name=[name].[ext]!./images/favicon.ico';
@@ -26,13 +34,23 @@ import 'file-loader?name=.htaccess!./.htaccess';
 // Import i18n messages
 import { translationMessages, DEFAULT_LOCALE } from './i18n';
 
+const fontConfig = {
+  google: {
+    families: ['Roboto'],
+  },
+};
+
 const MOUNT_NODE = document.getElementById('app');
 
 const render = messages => {
   ReactDOM.render(
     <LanguageProvider locale={DEFAULT_LOCALE} messages={messages}>
       <BrowserRouter>
-        <App />
+        <WebfontLoader config={fontConfig}>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </WebfontLoader>
       </BrowserRouter>
     </LanguageProvider>,
     MOUNT_NODE,
