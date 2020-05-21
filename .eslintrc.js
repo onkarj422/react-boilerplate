@@ -7,8 +7,8 @@ const prettierOptions = JSON.parse(
 
 module.exports = {
   parser: 'babel-eslint',
-  extends: ['airbnb', 'prettier', 'prettier/react'],
-  plugins: ['prettier', 'react', 'react-hooks', 'jsx-a11y'],
+  extends: ['airbnb', 'prettier', 'prettier/react', 'plugin:jsx-control-statements/recommended'],
+  plugins: ['prettier', 'react', 'react-hooks', 'jsx-a11y', 'jsx-control-statements'],
   env: {
     jest: true,
     browser: true,
@@ -76,6 +76,8 @@ module.exports = {
     'react/self-closing-comp': 0,
     'react/sort-comp': 0,
     'require-yield': 0,
+    'linebreak-style': 0,
+    "react/jsx-no-undef": [2, { "allowGlobals": true }],
   },
   settings: {
     'import/resolver': {
