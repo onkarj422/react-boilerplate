@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch } from 'react-router';
-import Route from './Route';
+import RouteWrapper from './RouteWrapper';
 import AppRouterProvider from './Provider';
 
 export { useRedirect } from './hooks';
 
-export default function Routes({ routes, switched }) {
+export default function AppRouter({ routes, switched }) {
   const mappedRoutes = (
     <For each="route" index="index" of={routes}>
-      <Route key={index} {...route} allRoutes={routes} />
+      <RouteWrapper key={index} {...route} allRoutes={routes} />
     </For>
   );
   const wrapped = (
@@ -23,7 +23,7 @@ export default function Routes({ routes, switched }) {
   return <AppRouterProvider>{wrapped}</AppRouterProvider>;
 }
 
-Routes.propTypes = {
+AppRouter.propTypes = {
   routes: PropTypes.array,
   switched: PropTypes.bool,
 };

@@ -42,7 +42,7 @@ function ComponentWrapper({
   );
 }
 
-const RouteProps = {
+export const RouteProps = {
   path: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   exact: PropTypes.bool,
   sensitive: PropTypes.bool,
