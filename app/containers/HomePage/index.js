@@ -12,7 +12,7 @@ import { useRedirect } from 'components/AppRouter';
 export default function HomePage() {
   const redirect = useRedirect();
   return (
-    <Button onClick={() => redirect('/about')} color="primary">
+    <Button onClick={() => redirect('/ss')} color="primary">
       Change Route
     </Button>
   );
