@@ -6,13 +6,14 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import { Button } from '@material-ui/core';
+import { useRedirect } from 'components/AppRouter';
 
 export default function HomePage() {
+  const redirect = useRedirect();
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <Button onClick={() => redirect('/about')} color="primary">
+      Change Route
+    </Button>
   );
 }

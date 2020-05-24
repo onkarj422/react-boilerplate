@@ -3,7 +3,8 @@ import NotFound from './containers/NotFoundPage/Loadable';
 import AboutPage from './containers/AboutPage';
 
 export default [
-  { path: ['/', 'home'], exact: true, sensitive: true, component: HomePage },
-  { path: 'about', sensitive: true, component: AboutPage },
-  { path: 'not-found', exact: true, sensitive: true, component: NotFound },
+  { path: ['/', '/home'], exact: true, sensitive: true, component: HomePage },
+  { path: '/about', sensitive: true, component: AboutPage },
+  { path: '/not-found', sensitive: true, component: NotFound },
+  { component: NotFound },
 ];

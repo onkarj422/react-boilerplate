@@ -8,7 +8,8 @@
 // Import all the third party stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import histroy from 'utils/history';
 import 'sanitize.css/sanitize.css';
 
 // Import root app
@@ -45,13 +46,13 @@ const MOUNT_NODE = document.getElementById('app');
 const render = messages => {
   ReactDOM.render(
     <LanguageProvider locale={DEFAULT_LOCALE} messages={messages}>
-      <BrowserRouter>
+      <Router history={histroy}>
         <WebfontLoader config={fontConfig}>
           <ThemeProvider theme={theme}>
             <App />
           </ThemeProvider>
         </WebfontLoader>
-      </BrowserRouter>
+      </Router>
     </LanguageProvider>,
     MOUNT_NODE,
   );

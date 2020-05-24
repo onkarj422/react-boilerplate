@@ -9,13 +9,13 @@
 import React from 'react';
 import { CssBaseline } from '@material-ui/core';
 
-import Routes from 'components/Routes';
+import AppRouter from 'components/AppRouter';
 import routes from 'routes';
 
 export default function App() {
   return (
     <CssBaseline>
-      <Routes routes={routes} />
+      <AppRouter switched routes={routes} />
     </CssBaseline>
   );
 }
