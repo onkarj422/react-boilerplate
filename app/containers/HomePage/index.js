@@ -12,8 +12,11 @@ import { useRedirect } from 'components/AppRouter';
 export default function HomePage() {
   const redirect = useRedirect();
   return (
-    <Button onClick={() => redirect('/ss')} color="primary">
-      Change Route
-    </Button>
+    <>
+      <Button onClick={() => redirect('/ss')} color="primary">
+        Change Route
+      </Button>
+      <Button color="primary">Call api</Button>
+    </>
   );
 }
