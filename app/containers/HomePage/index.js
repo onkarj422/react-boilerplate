@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-unused-vars */
 /*
  * HomePage
  *
@@ -10,13 +12,13 @@ import { Button } from '@material-ui/core';
 import { useRedirect } from 'components/AppRouter';
 
 export default function HomePage() {
-  const redirect = useRedirect();
-  return (
-    <>
-      <Button onClick={() => redirect('/ss')} color="primary">
-        Change Route
-      </Button>
-      <Button color="primary">Call api</Button>
-    </>
-  );
+    const redirect = useRedirect();
+    return (
+        <>
+            <Button onClick={() => redirect('/ss')} color="primary">
+                Change Route
+            </Button>
+            <Button color="primary">Call api</Button>
+        </>
+    );
 }
